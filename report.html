@@ -3,7 +3,7 @@
 <html lang="en">
 <head><meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>report (1)</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>report</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <style type="text/css">
     pre { line-height: 125%; }
 td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
@@ -7562,12 +7562,12 @@ a.anchor-link {
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h2 id="1.-Introduction">1. Introduction<a class="anchor-link" href="#1.-Introduction">¶</a></h2><p>Traffic congestion is a critical challenge in modern urban environments, often exacerbated by inefficient traffic signal control. Traditional solutions, such as fixed-time cycling or simple heuristic rules, are frequently suboptimal. They tend to be rigid or purely reactive, lacking the ability to anticipate dynamic changes in traffic flow.</p>
-<p>To bridge this gap, recent research has turned to <strong>Reinforcement Learning (RL)</strong>—allowing agents to learn optimal control policies through interaction with the environment.</p>
+<p>To bridge this gap, recent research has turned to <strong>Reinforcement Learning (RL)</strong>, allowing agents to learn optimal control policies through interaction with the environment.</p>
 <h3 id="Project-Goals">Project Goals<a class="anchor-link" href="#Project-Goals">¶</a></h3><p>This project aims to:</p>
 <ol>
 <li><strong>Simulate a Realistic Environment:</strong> Model specific challenges inherent to real intersections, such as non-stationary arrival rates (platooning) and startup lost time.</li>
 <li><strong>Implement RL Solutions:</strong> Develop and train agents using <strong>Tabular SARSA($\lambda$)</strong> and <strong>Deep Q-Networks (DQN)</strong> to optimize signal switching.</li>
-<li><strong>Benchmark Performance:</strong> Rigorously compare RL agents against industry-standard baselines (Fixed-Cycle and Greedy Heuristics).</li>
+<li><strong>Benchmark Performance:</strong> Rigorously compare RL agents against industry-standard baselines.</li>
 </ol>
 </div>
 </div>
@@ -7683,7 +7683,7 @@ a.anchor-link {
 <p><strong>Evaluation Methodology</strong>
 To ensure a rigorous and fair comparison, all algorithms are evaluated under identical experimental conditions:</p>
 <ol>
-<li><strong>Reproducibility:</strong> Each agent is evaluated over <strong>10 independent runs</strong>.</li>
+<li><strong>Reproducibility:</strong> Each policy is evaluated over <strong>10 independent runs</strong>.</li>
 <li><strong>Controlled Environment:</strong> We use a fixed set of random seeds for the environment. This guarantees that every agent faces the <strong>exact same sequence</strong> of vehicle arrivals, platoons, and stochastic delays.</li>
 <li><strong>Metric:</strong> We primarily track the <strong>Total Queue Length</strong> over time to visualize stability and congestion relief.</li>
 </ol>
@@ -7925,7 +7925,7 @@ Optimal Cycle Length: 6 steps (60s)
 <li><strong>Stability of Structure:</strong> The <strong>Fixed Cycle</strong> policy is the only baseline that achieves <strong>stability</strong>. Its success proves that in a coordinated environment, holding the light stable to clear platoons is far more important than reacting to every single vehicle.</li>
 </ol>
 <p><strong>Conclusion:</strong>
-The <strong>Fixed Cycle (60s)</strong> represents the state-of-the-art (SOTA) baseline. To justify the complexity of Reinforcement Learning, our agents must demonstrate:</p>
+The <strong>Fixed Cycle (60s)</strong> represents the state-of-the-art baseline. To justify the complexity of Reinforcement Learning, our agents must demonstrate:</p>
 <ol>
 <li><strong>Stability:</strong> They must avoid the divergent behavior of the Greedy heuristic.</li>
 <li><strong>Optimality:</strong> They must achieve a lower average queue than the Fixed Cycle policy ($&lt; 27$ cars) by adapting to stochastic variations that the static timer misses.</li>
@@ -8291,7 +8291,7 @@ Optimal Lambda: 0.2
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h2 id="5.-Comparative-Analysis:-Deep-vs.-Tabular-vs.-SOTA-Baseline">5. Comparative Analysis: Deep vs. Tabular vs. SOTA Baseline<a class="anchor-link" href="#5.-Comparative-Analysis:-Deep-vs.-Tabular-vs.-SOTA-Baseline">¶</a></h2><p>We now bring our results together to answer the core research question: <strong>Can Reinforcement Learning outperform optimized static traffic control?</strong></p>
-<p>In this final comparison, we exclude the Greedy and Random policies as they were proven unstable. Instead, we focus strictly on the <strong>State-of-the-Art (SOTA) Baseline</strong>: the Optimized Fixed Cycle (60s).</p>
+<p>In this final comparison, we exclude the Greedy and Random policies as they were proven unstable. Instead, we focus strictly on the <strong>State-of-the-Art Baseline</strong>: the Optimized Fixed Cycle (60s).</p>
 <p>We compare:</p>
 <ol>
 <li><strong>Fixed Cycle (Baseline):</strong> The stable, optimized static timer (Cycle=6).</li>
