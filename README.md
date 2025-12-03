@@ -26,7 +26,6 @@ I designed a custom Gymnasium environment (`TrafficIntersectionEnv`) to model re
 The complete scientific analysis, including hyperparameter sweeps, learning curves, and performance benchmarking, is detailed in the project notebook.
 
 ### [📄 Click here to view the Report (Jupyter Notebook)](report.ipynb)
-*(Also available as an HTML export in the repository)*
 
 **Highlight:** The experiments demonstrate that **DQN outperforms the optimized Fixed Cycle baseline by ~25%**, successfully learning to "surf" traffic platoons without the instability associated with standard greedy heuristics.
 
@@ -47,18 +46,15 @@ cd adaptive-traffic-rl
 pip install -r requirements.txt
 ```
 
-### 2. Run the experiments
-The entire pipeline is contained in the notebook. You can run it to reproduce all plots and results:
-```bash
-jupyter notebook Report.ipynb
-```
+### 3. Run the experiments
+The entire pipeline is contained in the notebook `report.ipynb`. You can execute it to reproduce all plots and results.
 
 ## 📂 Project Structure
 ```text
 .
 ├── algorithms/
 │   ├── agent.py          # Abstract Base Class for agents
-│   ├── dqn.py            # Deep Q-Network implementation (PyTorch)
+│   ├── dqn.py            # Deep Q-Network implementation
 │   └── sarsa_lambda.py   # Tabular SARSA(λ) implementation
 ├── baselines/
 │   └── baseline.py       # Static policies (Random, Greedy, Fixed Cycle)
@@ -67,7 +63,7 @@ jupyter notebook Report.ipynb
 │   └── wrappers.py       # Observation wrappers
 ├── evaluation/
 │   ├── callback.py       # Custom Callback for training logs
-│   └── experiments.py    # Reproducibility runners and data aggregators
+│   └── experiments.py    # functions to execute experiments and plots
 ├── report.ipynb          # Main scientific report and visualization
 ├── requirements.txt      # Python dependencies
 └── README.md             # Project documentation
