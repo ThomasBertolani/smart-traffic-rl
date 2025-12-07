@@ -1,6 +1,6 @@
 # Adaptive Traffic Signal Control using Reinforcement Learning
 
-A comparative study applying **Tabular Reinforcement Learning** and **Deep Reinforcement Learning** to optimize traffic signal control in a non-stationary, stochastic environment. This project demonstrates that Deep RL can outperform static heuristics by adapting to platoon dynamics in real-time.
+A comparative study applying **Tabular Reinforcement Learning** and **Deep Reinforcement Learning** to optimize traffic signal control in a non-stationary, stochastic environment. This project demonstrates that RL can outperform static heuristics by adapting to platoon dynamics in real-time.
 
 ---
 
@@ -10,7 +10,7 @@ Traditional traffic signals rely on **Fixed Cycle** timers (stable but inefficie
 **The Goal:** Train a RL agent to minimize queue lengths while maintaining stability, effectively solving the trade-off between reactivity and throughput.
 
 ## 🧩 Custom Environment
-I designed a custom Gymnasium environment (`TrafficIntersectionEnv`) to model realistic traffic physics:
+I designed a custom Gymnasium environment to model realistic traffic physics:
 * **Non-Stationary Inflow:** Traffic arrives in sine-wave gated platoons to simulate upstream signal coordination.
 * **Startup Lost Time:** A capacity penalty is applied during phase switches to simulate driver reaction time.
 * **Physical Constraints:** Inflow is capped by a safety headway of 1.2s.
@@ -23,11 +23,9 @@ I designed a custom Gymnasium environment (`TrafficIntersectionEnv`) to model re
 
 ## 📈 View the Full Report
 
-The complete scientific analysis, including hyperparameter sweeps, learning curves, and performance benchmarking, is detailed in the project notebook.
+The complete scientific analysis, including hyperparameter sweeps, learning curves and performance benchmarking, is detailed in the project notebook.
 
 ### [📄 Click here to view the Report (Jupyter Notebook)](report.ipynb)
-
-**Highlight:** The experiments demonstrate that **DQN outperforms the optimized Fixed Cycle baseline by ~25%**, successfully learning to "surf" traffic platoons without the instability associated with standard greedy heuristics.
 
 ---
 
@@ -70,4 +68,4 @@ The entire pipeline is contained in the notebook `report.ipynb`. You can execute
 ```
 
 ## 👤 Author
-**Thomas Bertolani** *Artificial Intelligenge Engineering student @ UniMoRe* [LinkedIn](https://www.linkedin.com/in/thomasbertolani/)
+**Thomas Bertolani** *Artificial Intelligence Engineering student @ UniMoRe* [LinkedIn](https://www.linkedin.com/in/thomasbertolani/)
